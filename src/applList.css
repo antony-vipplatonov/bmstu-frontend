@@ -1,0 +1,43 @@
+.dateFrom {
+    display: inline-block;
+    width: 10em;
+    margin-left: 0.5em;
+}
+.dateTo {
+    display: inline-block;
+    width: 10em;
+    margin-left: 0.5em;
+}
+.dropdown {
+    display: inline-block;
+}
+.filters{
+    height: 4em;
+}
+.clear{
+    margin-left: 0.5em;
+}
+.desc{
+    
+    word-wrap: break-word;
+    overflow-x:hidden;
+    word-break:break-all;
+}
+.descDiv{
+    display: block;
+    max-height: 10em;
+}
+.table2 {
+    overflow: auto;
+    display: block;
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem -1.5rem #959ca7;
+    }
+    
+.table tbody tr:hover td, .table tbody tr:hover th {
+    background-color: #c3d0f5;
+}
+
+.idField {
+    margin-left:0.5em;
+} 

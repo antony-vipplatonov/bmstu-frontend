@@ -1,3 +1,4 @@
+import axios from "axios"
 import {mockShips} from "../model"
 
 
@@ -26,7 +27,7 @@ const filterShipData = (shipArray: Ship[], nameFilter: string): Ship[] => {
 
 
 export const searchInShipList = async (text=''): Promise<ShipList> =>{
-    return fetch(`../../api/seabattles/?text=${text}`)
-        .then((response) => response.json())
+    return axios.get(`../../api/seabattles/?text=${text}`)
+        .then((response) => response.data)
         .catch(()=> ({ships:filterShipData(mockShips['ships'], text),draftID:0}))
 }
