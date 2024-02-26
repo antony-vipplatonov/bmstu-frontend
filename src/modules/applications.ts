@@ -5,6 +5,8 @@ export interface userData {
     username: string
     email: string | null
     phone: string | null
+    password: string
+    is_staff: boolean
 }
 
 export interface appl {

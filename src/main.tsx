@@ -12,6 +12,8 @@ import store from "./store";
 import { Provider } from "react-redux";
 import DraftAppl from './draftAppl.tsx'
 import "./main.css"
+import ModerShipList from './ModerCompaundList.tsx'
+import EditShip from './EditShip.tsx'
 
 const App: React.FC = () => {
   return (
@@ -25,6 +27,8 @@ const App: React.FC = () => {
               <Route path="/bmstu-frontend/auth" element={<AuthPage/>}/>
               <Route path="/bmstu-frontend/auth/reg" element={<RegistrationPage/>} />
               <Route path="/bmstu-frontend/applications/:id" element={<DraftAppl/>} />
+              <Route path="/bmstu-frontend/moder/seabattles" element={<ModerShipList/>}/>
+              <Route path="/bmstu-frontend/moder/seabattles/:id" element={<EditShip/>}/>
           </Routes>
       </HashRouter>
 

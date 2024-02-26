@@ -1,0 +1,30 @@
+.col {
+    display: inline-block;
+    margin-right: 1em;
+  }
+  .table2 {
+    max-height: calc(100vh - 17.5em);
+    overflow: auto;
+    display: block;
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem -1.5rem #959ca7;
+    }
+    
+    .idField {
+        margin-left:0.5em;
+    } 
+    .shipImg{
+        width:4em;
+        height:4em;
+    }
+    .shipImgCell{
+        text-align: center;
+    }
+    .inputField{
+        width: calc(100% - 10em);
+        display:inline-block
+    }
+    .createBtn{
+        width: 7em;
+        float: right;
+    }

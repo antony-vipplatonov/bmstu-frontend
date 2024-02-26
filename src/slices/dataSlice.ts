@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 import { useSelector } from "react-redux";
-import Cookies from 'js-cookie';
 
 
 
@@ -9,12 +8,15 @@ import Cookies from 'js-cookie';
 const dataSlice = createSlice({
     name: "data",
     initialState: {
-        isLogged:Cookies.get("session_id")?true:false,
+        isLogged:false,
         username:'',
+        isModer:false,
+        usernameSearchQuery:'',
         nameSearchQuery:'',
-        votingDateToSearchQuery:"9999-12-01",
-        votingDateFromSearchQuery:"0001-01-01",
-        votingStatusSearchQuery:'Статус',
+        nameSearchQueryModer:'',
+        compaundDateToSearchQuery:"9999-12-01",
+        compaundDateFromSearchQuery:"0001-01-01",
+        compaundStatusSearchQuery:'Статус',
         
     },
     reducers: {
@@ -22,31 +24,40 @@ const dataSlice = createSlice({
             state.username = payload
         },
         setDateTo(state, {payload}) {  
-            state.votingDateToSearchQuery = payload
+            state.compaundDateToSearchQuery = payload
         },
         setDateFrom(state, {payload}) {  
-            state.votingDateFromSearchQuery = payload
+            state.compaundDateFromSearchQuery = payload
         },
         setStatus(state, {payload}) {  
-            state.votingStatusSearchQuery = payload
+            state.compaundStatusSearchQuery = payload
         },
         setNameSQ(state, {payload}) {  
             state.nameSearchQuery = payload
         },
-        chLog(state) {  
-            state.isLogged = !state.isLogged
+        chLog(state, {payload}) {  
+            state.isLogged = payload
         },
         delDateTo(state) {  
-            state.votingDateToSearchQuery = '9999-12-01'
+            state.compaundDateToSearchQuery = '9999-12-01'
         },
         delDateFrom(state) { 
-            state.votingDateFromSearchQuery = '0001-01-01'
+            state.compaundDateFromSearchQuery = '0001-01-01'
         },
         delStatus(state) {  
-            state.votingStatusSearchQuery = 'Статус'
+            state.compaundStatusSearchQuery = 'Статус'
         },
         delNameSQ(state) {  
             state.nameSearchQuery = ''
+        },
+        chModer(state, {payload}) {  
+            state.isModer = payload
+        },
+        setNameSQModer(state, {payload}) {  
+            state.nameSearchQueryModer = payload
+        },
+        setUsernameSearchQuery(state, {payload}) {  
+            state.usernameSearchQuery = payload
         },
     }
 })
@@ -54,20 +65,29 @@ const dataSlice = createSlice({
 export const useIsLogged = () =>
     useSelector((state:any) => state.ourData.isLogged)
 
+export const useIsModer = () =>
+    useSelector((state:any) => state.ourData.isModer)
+
 export const useNameSearchQuery = () =>
     useSelector((state:any) => state.ourData.nameSearchQuery)
 
-export const useVotingDateToSearchQuery = () =>
-    useSelector((state:any) => state.ourData.votingDateToSearchQuery)
+export const useNameSearchQueryModer = () =>
+    useSelector((state:any) => state.ourData.nameSearchQueryModer)
 
-export const useVotingDateFromSearchQuery = () =>
-    useSelector((state:any) => state.ourData.votingDateFromSearchQuery)
+export const useCompaundDateToSearchQuery = () =>
+    useSelector((state:any) => state.ourData.compaundDateToSearchQuery)
 
-export const useVotingStatusSearchQuery = () =>
-    useSelector((state:any) => state.ourData.votingStatusSearchQuery)
+export const useCompaundDateFromSearchQuery = () =>
+    useSelector((state:any) => state.ourData.compaundDateFromSearchQuery)
+
+export const useCompaundStatusSearchQuery = () =>
+    useSelector((state:any) => state.ourData.compaundStatusSearchQuery)
 
 export const useUsername = () =>
     useSelector((state:any) => state.ourData.username)
+
+export const useUsernameSearchQuery = () =>
+    useSelector((state:any) => state.ourData.usernameSearchQuery)
 
 
 
@@ -83,6 +103,9 @@ export const {
     delStatus: delStatusAction,
     delNameSQ: delNameSQAction,
     setUsername: setUsernameAction,
+    chModer: chModerAction,
+    setUsernameSearchQuery: setUsernameSQAction,
+    setNameSQModer: setNameSQModerAction,
 } = dataSlice.actions
 
 

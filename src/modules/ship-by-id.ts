@@ -23,7 +23,7 @@ const filterShipDataById = (shipArray: Ship[], idFilter: number): Ship | undefin
 
 
 export const shipById = async (id = ''): Promise<Ship> =>{
-    return axios.get(`./../../api/seabattles/${id}/`)
+    return axios.get(`../../../api/seabattles/${id}/`)
         .then((response) => response.data)
         .catch(()=> (filterShipDataById(mockShips['ships'], Number(id))))
 }

@@ -1,7 +1,7 @@
 import './authPage.css'
 import { login } from './modules/login.ts'
 import { useState } from 'react'
-import { chLogAction, setUsernameAction } from './slices/dataSlice.ts'
+import { chLogAction, chModerAction, setUsernameAction } from './slices/dataSlice.ts'
 import { useNavigate } from 'react-router-dom'
 import { checkName } from './modules/checkName.ts'
 import { useDispatch } from 'react-redux'
@@ -21,9 +21,10 @@ function AuthPage() {
       setError(true)
     }
     else {
-      
-      dispatch(chLogAction());
-      dispatch(setUsernameAction(await checkName()));
+      dispatch(chLogAction(true));
+      const res = await checkName();
+      dispatch(setUsernameAction(res.username));
+      dispatch(chModerAction(res.is_staff));
       navigate("/bmstu-frontend/seabattles");
     }
     
