@@ -22,7 +22,7 @@ const filterShipDataById = (shipArray: Ship[], idFilter: number): Ship | undefin
 
 
 export const shipById = async (id = ''): Promise<Ship> =>{
-    return fetch(`./../../api/seabattles/${id}`)
+    return fetch(`./../../api/seabattles/${id}/`)
         .then((response) => response.json())
         .catch(()=> (filterShipDataById(mockShips['ships'], Number(id))))
 }

@@ -11,6 +11,10 @@ export default defineConfig({
                 rewrite: (path) => path.replace(/^\/api/, ''),
               },
             }, 
+            strictPort: true,
+            watch: {
+              ignored: ["**/src-tauri/**"],
+            },
           },
   base: '/bmstu-frontend/',
   plugins: [react()],
