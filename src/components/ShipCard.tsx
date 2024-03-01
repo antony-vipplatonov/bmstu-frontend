@@ -26,7 +26,7 @@ const ShipCard: FC<Props> = ({ id, name, image_src }) => (
             <div className = "execBtn">
             <Link className="link" to={`/bmstu-frontend/seabattles/${id}`}><Button className="cardButton" variant="primary"><div className="buttonShip">Перейти на страницу описания корабля</div></Button></Link>
                 <a className = "add" href='#'>
-                    <img src="http://localhost:9000/images/bucket/bucket.png" alt="Добавить в корзину" height = "33rem"/>
+                    <img src="https://pic.onlinewebfonts.com/svg/img_140864.png" alt="Добавить в корзину" height = "33rem"/>
                 </a>
             </div>
         </Card.Body>
