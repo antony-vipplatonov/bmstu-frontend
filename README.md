@@ -1,4 +1,4 @@
-# Веб-приложение для электронных голосований
+# Веб-приложение "Морские сражения на Тихом океане"
 
 # Backend - https://github.com/antony-vipplatonov/bmstu-backend
 # Async service - https://github.com/antony-vipplatonov/bmstu-async
