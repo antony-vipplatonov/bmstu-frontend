@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Ships from './Ships.tsx'
 import ShipPage from './Ship.tsx'
+import MenuPage from './Menu.tsx'
 import {BrowserRouter as HashRouter,Route,Routes} from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import NavBar from './components/navbar'
@@ -12,7 +13,7 @@ const App: React.FC = () => {
       <HashRouter>
       <NavBar/>
           <Routes>
-              <Route path="/bmstu-frontend/" element={<p className="gText gMain">Главная</p>}/>
+              <Route path="/bmstu-frontend/" element={<MenuPage/>}/>
               <Route path="/bmstu-frontend/seabattles" element={<Ships/>}/>
               <Route path="/bmstu-frontend/seabattles/:id" element={<ShipPage/>} />
           </Routes>

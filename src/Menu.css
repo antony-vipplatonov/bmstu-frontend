@@ -1,0 +1,22 @@
+.bodyimg{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/fe/Tokubetu-Kankanshiki.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: calc(100vh - 10em);
+}
+.h2Ship{
+    text-align: center !important;
+    padding-top: 2em; 
+    color: black !important;
+}
+.buttonMenu{
+    margin-top: 5em !important; 
+    width: 100%;
+    font-size: 3em !important;
+    background-color:transparent !important;
+    border-color: black !important;
+    color:white !important;
+}
+.textButton{
+    color:black !important;
+}
